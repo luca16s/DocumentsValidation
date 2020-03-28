@@ -1,11 +1,16 @@
+os:
+  - linux
+  - osx
 language: csharp
-dist: trusty
-sudo: required
+solution: GianLuca.Domain.Core.sln
 mono: none
-dotnet: 2.0.0
+dotnet: 3.0.100
 before_install:
+  - cd .travis/
   - chmod +x build.sh
   - chmod +x test.sh
+  - chmod +x codecov.sh
 script:
   - sudo ./build.sh --quiet verify
   - sudo ./test.sh --quiet verify
+  - sudo ./codecov.sh --quiet verify
