@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CpfValidation\CpfCommonTools.csproj" />
+    <ProjectReference Include="..\CpfCommonTools\CpfCommonTools.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,11 @@
+language: csharp
+dist: trusty
+sudo: required
+mono: none
+dotnet: 2.0.0
+before_install:
+  - chmod +x build.sh
+  - chmod +x test.sh
+script:
+  - sudo ./build.sh --quiet verify
+  - sudo ./test.sh --quiet verify

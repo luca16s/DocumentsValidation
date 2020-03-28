@@ -4,9 +4,18 @@ namespace CpfCommonTools
 {
     public class CpfValidation
     {
+        public bool IsValid(string cpf)
+        {
+            return VerifyInputLenght(cpf)
+                && CheckFalseSequences(cpf)
+                && !CheckCpfForLetters(cpf)
+                && CheckCpfVerifyingDigit(cpf)
+                && CheckSecondDigitIsValid(cpf);
+        }
+
         public bool VerifyInputLenght(string cpf)
         {
-            return cpf.Length > 0 && cpf.Length < 11;
+            return cpf.Length == 11;
         }
 
         public bool CheckFalseSequences(string cpf)

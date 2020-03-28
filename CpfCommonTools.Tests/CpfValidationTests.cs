@@ -43,6 +43,16 @@ namespace CpfCommonTools.Validation.Tests
         }
 
         [Fact]
+        public void TESTA_RETORNANDO_FALSO_QUANDO_INPUT_FOR_MENOR_QUE_ONZE()
+        {
+            var cpf = "15427";
+
+            var result = cpfValidation.VerifyInputLenght(cpf);
+
+            Assert.False(result);
+        }
+
+        [Fact]
         public void TESTA_RETORNANDO_FALSE_QUANDO_INPUT_FOR_MAIOR_QUE_ONZE()
         {
             var cpf = "123456789101112";
@@ -59,7 +69,7 @@ namespace CpfCommonTools.Validation.Tests
 
             var result = cpfValidation.VerifyInputLenght(cpf);
 
-            Assert.False(result);
+            Assert.True(result);
         }
 
         [Fact]
@@ -140,6 +150,22 @@ namespace CpfCommonTools.Validation.Tests
             var result = cpfValidation.CheckCpfVerifyingDigit(cpf);
 
             Assert.True(result);
+        }
+
+        [Fact]
+        public void TESTA_SE_RETORNA_VALIDO_QUANDO_CPF_VERDADEIRO()
+        {
+            var result = cpfValidation.IsValid("31151934089");
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void TESTA_SE_RETORNA_FALSO_QUANDO_CPF_FALSO()
+        {
+            var result = cpfValidation.IsValid("31151434089");
+
+            Assert.False(result);
         }
     }
 }
