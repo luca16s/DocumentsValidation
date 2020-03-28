@@ -1,8 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace CpfValidation.Tests
+namespace CpfCommonTools.Validation.Tests
 {
     public class CpfValidationTests
     {

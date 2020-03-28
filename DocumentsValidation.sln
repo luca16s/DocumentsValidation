@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpfValidation", "CpfValidation\CpfValidation.csproj", "{03EDD34B-CAA6-448E-9EFA-75DEC2F393F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpfCommonTools", "CpfCommonTools\CpfCommonTools.csproj", "{03EDD34B-CAA6-448E-9EFA-75DEC2F393F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpfValidation.Tests", "CpfValidation.Tests\CpfValidation.Tests.csproj", "{A9E5CA87-83AD-4C08-B338-B2E5B8AE06E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CpfCommonTools.Tests", "CpfCommonTools.Tests\CpfCommonTools.Tests.csproj", "{A9E5CA87-83AD-4C08-B338-B2E5B8AE06E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
