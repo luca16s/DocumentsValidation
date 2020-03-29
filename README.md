@@ -2,9 +2,9 @@ Validação de documentos
 ================
 
 ## Project status
-Bulid Status|License|
-------------|-------|
-[![Build Status](https://travis-ci.org/luca16s/DocumentsValidation.svg?branch=master)](https://travis-ci.org/luca16s/validacao-de-documentos) | [![License](https://img.shields.io/badge/LICENSE-MIT-orange.svg)]() |
+Build Status|License|CodeCoverage|
+------------|-------|------------|
+[![Build Status](https://travis-ci.org/luca16s/DocumentsValidation.svg?branch=master)](https://travis-ci.org/luca16s/validacao-de-documentos) | [![License](https://img.shields.io/badge/LICENSE-MIT-orange.svg)]() | [![codecov](https://codecov.io/gh/luca16s/DocumentsValidation/branch/master/graph/badge.svg)](https://codecov.io/gh/luca16s/DocumentsValidation) |
 
 :us:
 ### About this project
