@@ -5,19 +5,12 @@ namespace CpfCommonTools.Validation.Tests
 {
     public class CpfValidationTests
     {
-        private readonly CpfValidation cpfValidation;
-
-        public CpfValidationTests()
-        {
-            cpfValidation = new CpfValidation();
-        }
-
         [Fact]
         public void TESTA_RETORNANDO_TRUE_QUANDO_INPUT_CONTER_LETRA()
         {
             var cpf = "1S114758941";
 
-            var result = cpfValidation.CheckCpfForLetters(cpf);
+            var result = CpfValidation.CheckCpfForLetters(cpf);
 
             Assert.True(result);
         }
@@ -27,7 +20,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "13114758941";
 
-            var result = cpfValidation.CheckCpfForLetters(cpf);
+            var result = CpfValidation.CheckCpfForLetters(cpf);
 
             Assert.False(result);
         }
@@ -37,7 +30,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "";
 
-            var result = cpfValidation.VerifyInputLenght(cpf);
+            var result = CpfValidation.VerifyInputLenght(cpf);
 
             Assert.False(result);
         }
@@ -47,7 +40,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "15427";
 
-            var result = cpfValidation.VerifyInputLenght(cpf);
+            var result = CpfValidation.VerifyInputLenght(cpf);
 
             Assert.False(result);
         }
@@ -57,7 +50,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "123456789101112";
 
-            var result = cpfValidation.VerifyInputLenght(cpf);
+            var result = CpfValidation.VerifyInputLenght(cpf);
 
             Assert.False(result);
         }
@@ -67,7 +60,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "12345678910";
 
-            var result = cpfValidation.VerifyInputLenght(cpf);
+            var result = CpfValidation.VerifyInputLenght(cpf);
 
             Assert.True(result);
         }
@@ -89,7 +82,7 @@ namespace CpfCommonTools.Validation.Tests
                 "99999999999"
             };
 
-            invalidNumbers.ForEach(cpf => Assert.False(cpfValidation.CheckFalseSequences(cpf)));
+            invalidNumbers.ForEach(cpf => Assert.False(CpfValidation.CheckFalseSequences(cpf)));
         }
 
         [Fact]
@@ -109,7 +102,7 @@ namespace CpfCommonTools.Validation.Tests
                 "74025516012"
             };
 
-            invalidNumbers.ForEach(cpf => Assert.True(cpfValidation.CheckFalseSequences(cpf)));
+            invalidNumbers.ForEach(cpf => Assert.True(CpfValidation.CheckFalseSequences(cpf)));
         }
 
         [Fact]
@@ -117,7 +110,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "19210363610";
 
-            var result = cpfValidation.CheckCpfVerifyingDigit(cpf);
+            var result = CpfValidation.CheckCpfVerifyingDigit(cpf);
 
             Assert.False(result);
         }
@@ -127,7 +120,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "19210363621";
 
-            var result = cpfValidation.CheckCpfVerifyingDigit(cpf);
+            var result = CpfValidation.CheckCpfVerifyingDigit(cpf);
 
             Assert.False(result);
         }
@@ -137,7 +130,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "19210363620";
 
-            var result = cpfValidation.CheckCpfVerifyingDigit(cpf);
+            var result = CpfValidation.CheckCpfVerifyingDigit(cpf);
 
             Assert.True(result);
         }
@@ -147,7 +140,7 @@ namespace CpfCommonTools.Validation.Tests
         {
             var cpf = "15382205710";
 
-            var result = cpfValidation.CheckCpfVerifyingDigit(cpf);
+            var result = CpfValidation.CheckCpfVerifyingDigit(cpf);
 
             Assert.True(result);
         }
@@ -155,7 +148,7 @@ namespace CpfCommonTools.Validation.Tests
         [Fact]
         public void TESTA_SE_RETORNA_VALIDO_QUANDO_CPF_VERDADEIRO()
         {
-            var result = cpfValidation.IsValid("31151934089");
+            var result = CpfValidation.IsValid("31151934089");
 
             Assert.True(result);
         }
@@ -163,7 +156,7 @@ namespace CpfCommonTools.Validation.Tests
         [Fact]
         public void TESTA_SE_RETORNA_FALSO_QUANDO_CPF_FALSO()
         {
-            var result = cpfValidation.IsValid("31151434089");
+            var result = CpfValidation.IsValid("31151434089");
 
             Assert.False(result);
         }

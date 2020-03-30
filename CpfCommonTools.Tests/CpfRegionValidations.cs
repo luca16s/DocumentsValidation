@@ -5,13 +5,6 @@ namespace CpfCommonTools.Validation.Tests
 {
     public class CpfRegionValidations
     {
-        private readonly CpfRegionCheck cpfRegionCheck;
-
-        public CpfRegionValidations()
-        {
-            cpfRegionCheck = new CpfRegionCheck();
-        }
-
         [Fact]
         public void TESTA_RETORNO_CORRETO_DE_REGIOES()
         {
@@ -45,7 +38,7 @@ namespace CpfCommonTools.Validation.Tests
 
             for (var i = 0; i < 10; i++)
             {
-                Assert.Equal(regionNames[i], cpfRegionCheck.RegionCpf(region[i]));
+                Assert.Equal(regionNames[i], CpfRegionCheck.RegionCpf(region[i]));
             }
         }
     }

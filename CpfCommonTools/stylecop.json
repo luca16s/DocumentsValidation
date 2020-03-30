@@ -1,0 +1,58 @@
+﻿{
+  // ACTION REQUIRED: This file was automatically added to your project, but it
+  // will not take effect until additional steps are taken to enable it. See the
+  // following page for additional information:
+  //
+  // https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/EnableConfiguration.md
+
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "documentationRules": {
+      "companyName": "DeadFishStudio",
+      "copyrightText": "Copyright (c) {companyName}. All rights reserved.\nLicensed under the {licenseName} license. See {licenseFile} file in the project root for full license information.",
+      "headerDecoration": "-----------------------------------------------------------------------",
+      "xmlHeader": true,
+      "variables": {
+        "licenseName": "MIT",
+        "licenseFile": "LICENSE"
+      },
+      "documentPrivateElements": false,
+      "documentPrivateFields": false,
+      "documentationCulture": "pt-BR",
+      "fileNamingConvention": "stylecop",
+      "documentInterfaces": true,
+      "documentExposedElements": true,
+      "documentInternalElements": true,
+      "excludeFromPunctuationCheck": []
+    },
+    "indentation": {
+      "indentationSize": 4,
+      "tabSize": 4,
+      "useTabs": false
+    },
+    "spacingRules": {
+
+    },
+    "readabilityRules": {
+      "allowBuiltInTypeAliases": true
+    },
+    "orderingRules": {
+      "blankLinesBetweenUsingGroups": "allow",
+      "elementOrder": [ "accessibility", "kind", "readonly", "static", "constant" ],
+      "systemUsingDirectivesFirst": true,
+      "usingDirectivesPlacement": "insideNamespace"
+    },
+    "namingRules": {
+      "allowedNamespaceComponents": [],
+      "includeInferredTupleElementNames": true,
+      "tupleElementNameCasing": "PascalCase"
+    },
+    "maintainabilityRules": {
+      "topLevelTypes": [ "class", "enum", "interface", "struct" ]
+    },
+    "layoutRules": {
+      "newlineAtEndOfFile": "allow",
+      "allowConsecutiveUsings": false
+    }
+  }
+}
