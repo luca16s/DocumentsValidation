@@ -6,6 +6,14 @@ namespace CpfCommonTools.Validation.Tests
     public class CpfValidationTests
     {
         [Fact]
+        public void TESTA_RETORNANDO_FALSE_SE_STRING_FOR_NULA()
+        {
+            var result = CpfValidation.IsValid(null);
+
+            Assert.False(result);
+        }
+
+        [Fact]
         public void TESTA_RETORNANDO_TRUE_QUANDO_INPUT_CONTER_LETRA()
         {
             var cpf = "1S114758941";
