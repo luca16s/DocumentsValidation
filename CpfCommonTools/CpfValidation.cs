@@ -13,14 +13,14 @@ namespace CpfCommonTools
     /// <summary>
     /// Classe para realização da validação de CPF.
     /// </summary>
-    public static class CpfValidation
+    public class CpfValidation : ICpfValidation
     {
         /// <summary>
         /// Valida CPF passado.
         /// </summary>
         /// <param name="cpf">Texto contendo o CPF.</param>
         /// <returns>Retorna se CPF é válido.</returns>
-        public static bool IsValid(string cpf)
+        public bool IsValid(string cpf)
         {
             if (string.IsNullOrEmpty(cpf))
             {
@@ -39,7 +39,7 @@ namespace CpfCommonTools
         /// </summary>
         /// <param name="cpf">Texto contendo o CPF.</param>
         /// <returns>Verdadeiro se quantidade é 11.</returns>
-        public static bool VerifyInputLenght(string cpf)
+        public bool VerifyInputLenght(string cpf)
         {
             if (string.IsNullOrEmpty(cpf))
             {
@@ -54,7 +54,7 @@ namespace CpfCommonTools
         /// </summary>
         /// <param name="cpf">Texto contendo o CPF.</param>
         /// <returns>Retorna falso se cpf contém todos os dígitos iguais.</returns>
-        public static bool CheckFalseSequences(string cpf)
+        public bool CheckFalseSequences(string cpf)
         {
             if (string.IsNullOrEmpty(cpf))
             {
@@ -71,7 +71,7 @@ namespace CpfCommonTools
         /// </summary>
         /// <param name="cpf">Texto contendo o CPF.</param>
         /// <returns>Verdadeiro se o texto contém somente dígitos.</returns>
-        public static bool CheckCpfForLetters(string cpf)
+        public bool CheckCpfForLetters(string cpf)
         {
             return cpf.Any(c => !char.IsDigit(c));
         }
@@ -81,7 +81,7 @@ namespace CpfCommonTools
         /// </summary>
         /// <param name="cpf">Texto contendo o CPF.</param>
         /// <returns>Verdadeiro se ambos os dígitos forem verdadeiros.</returns>
-        public static bool CheckCpfVerifyingDigit(string cpf)
+        public bool CheckCpfVerifyingDigit(string cpf)
         {
             if (string.IsNullOrEmpty(cpf))
             {
@@ -91,14 +91,14 @@ namespace CpfCommonTools
             return CheckFirstDigitIsValid(cpf) && CheckSecondDigitIsValid(cpf);
         }
 
-        private static bool CheckFirstDigitIsValid(string cpf)
+        private bool CheckFirstDigitIsValid(string cpf)
         {
             var cpfArray = cpf.ToCharArray();
 
             return ((CalculateBaseDigits(cpfArray, 0, 9) * 10) % 11).ToString(CultureInfo.InvariantCulture) == cpfArray[9].ToString(CultureInfo.InvariantCulture);
         }
 
-        private static bool CheckSecondDigitIsValid(string cpf)
+        private bool CheckSecondDigitIsValid(string cpf)
         {
             var cpfArray = cpf.ToCharArray();
 
@@ -106,7 +106,7 @@ namespace CpfCommonTools
                 || ((CalculateBaseDigits(cpfArray, 1, 10) * 10) % 11).ToString(CultureInfo.InvariantCulture) == "10";
         }
 
-        private static double CalculateBaseDigits(char[] cpfArray, int startPosition, int size)
+        private double CalculateBaseDigits(char[] cpfArray, int startPosition, int size)
         {
             var count = 10;
 
