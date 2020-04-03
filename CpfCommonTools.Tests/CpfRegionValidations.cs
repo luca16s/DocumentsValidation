@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CpfCommonTools.Tests;
+using System.Collections.Generic;
 using Xunit;
 
 namespace CpfCommonTools.Validation.Tests
@@ -22,23 +23,9 @@ namespace CpfCommonTools.Validation.Tests
                 "PR e SC"
             };
 
-            string[] region =
-            {
-                "00000000000",
-                "11111111111",
-                "22222222222",
-                "33333333333",
-                "44444444444",
-                "55555555555",
-                "66666666666",
-                "77777777777",
-                "88888888888",
-                "99999999999"
-            };
-
             for (var i = 0; i < 10; i++)
             {
-                Assert.Equal(regionNames[i], CpfRegionCheck.RegionCpf(region[i]));
+                Assert.Equal(regionNames[i], CpfRegionCheck.RegionCpf(CpfInputs.CpfsInvalidos[i]));
             }
         }
     }
